@@ -1,0 +1,112 @@
+{% load static %}
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-info sticky-top">
+  <div class="container" style="height:4rem">
+    <a class="navbar-brand" href="{% url 'index' %}">
+      <!--logo also need to update the static folder -->
+      <img src="{% static 'img/house_logo.png' %}" class="logo" alt="" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <ul class="navbar-nav">
+        <!-- set condtion active of the selection -->
+        <li
+          {% if '/' == request.path %}
+            class="nav-item active mr-3"
+          {% else %}
+            class="nav-item mr-3"
+          {% endif %}>
+
+        <!-- refactor the html based on pages/urls -->
+          <a class="nav-link text-dark" style="font-size:20px;text-transform:capitalize" href="{% url 'index' %}">What is a HomeCare?</a>
+        </li>
+
+        <!-- copy from above for about -->
+        <li 
+        {% if 'plan' in request.path %} 
+          class="nav-item active mr-3"
+        {% else %}
+          class = "nav-item mr-3 text-white"
+        {% endif %}>
+        <a class="nav-link text-dark" style="font-size:20px;text-transform:capitalize" href="{% url 'plan' %}">Pricing & Plans</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a href=""class="nav-link dropdown-toggle text-dark" data-toggle="dropdown"></a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">
+              <div class="col-md-3">
+              <button class=" btn-lg bg-white" data-toggle="modal" data-target="#inquirModal">SilverShield</button>
+              </div>
+            </a>
+            <a href="#" class="dropdown-item">
+              <div class="col-md-3">
+                <button class=" btn-lg bg-white" data-toggle="modal" data-target="#inquiryModal">GoldShield</button>
+              </div>
+            </a>
+            <a href="#" class="dropdown-item">
+              <div class="col-md-3">
+                <button class="btn-lg bg-white" data-toggle="modal" data-target="#iModal">PlatinumShield</button>
+              </div>
+            </a>
+          </div>
+        </li>
+      
+        
+        <!-- fixing the listings links and if block for highlight -->
+        <li 
+          {% if 'blogs' in request.path %}
+            class="nav-item active mr-3"
+          {% else %}
+            class="nav-item mr-3"
+          {% endif %}>
+            <a class="nav-link text-dark" style="font-size:20px;text-transform:capitalize" href="{% url 'blog' %}">Blog</a>
+        </li>
+      </ul>
+      <!-- login account related section and update the hightlight link -->
+      <ul class="navbar-nav ml-auto">
+        <!-- if login then show logout -->
+      {% if user.is_authenticated %}
+    
+        
+        <!-- add logout form -->
+        <li class="nav-item mr-3">
+          <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link text-dark" style="font-size:20px;text-transform:capitalize">
+            <i class="fas fa-sign-out-alt"></i>Logout</a>
+            <form action="{% url 'logout' %}" method="POST" id="logout">
+              {% csrf_token %}
+            </form>
+        </li>
+      {% else %} 
+          <!-- not login yet then show both login and register -->
+        
+        <li
+          {% if 'register' in request.path %}
+            class="nav-item active mr-3"
+          {% else %}
+            class="nav-item mr-3"
+          {% endif %}>
+            <a class="nav-link text-dark" style="font-size:20px;text-transform:capitalize" href="{% url 'register' %}">
+             <i class="fas fa-user-circle"></i>Register</a>
+        </li>
+         <li 
+          {% if 'login' in request.path %}
+            class="nav-item active ml-3"
+          {% else %}
+            class="nav-item ml-3"
+          {% endif %}>
+            <a class="nav-link text-dark" style="font-size:20px;text-transform:capitalize" href="{% url 'login' %}">
+            <i class="fas fa-sign-in-alt"></i>Login</a>
+        </li>
+       {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+

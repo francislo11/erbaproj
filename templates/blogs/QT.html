@@ -1,0 +1,77 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<head>
+  <title>Blog QT01</title>
+</head>
+<h1 class="dispaly-3 text-center my-4">Blog - Quick Tips</h1>
+
+<!--- breadcrumb-->
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="index.html">Home</a>
+  </li>
+  <li class="breadcrumb-item">
+    <a href="QT.html">Quick_Tips</a>
+  </li>
+</ol>
+
+<div class="container">
+  <!-- block -->
+  <div class="card">
+    <div class="card-body">
+      Quicl tips for the Home - When it feels like yur life is running on empty,
+      keeping up with work, famly and all of life's little chores, managing the
+      home can take a black seat. Learn quick tips for the home from organizing,
+      cleaning, maintainence, safety and more.
+    </div>
+  </div>
+  <br />
+  <br />
+
+  <!-- card colums -->
+  <div class="card-columns">
+    <div class="card">
+      <img src="{% static 'img/pic01.jpg' %}" alt="" class="card-img" />
+      <div class="card-body">
+        <h4 class="card-title">
+          Is it more eco-friendly to repair, replace or recycle appliances?
+        </h4>
+        <p class="card-text">
+          Which is more environmentally freindly for old appliances? What are
+          your eco-friendly appliances recycling options? XXX discusses each
+          option.
+        </p>
+        <a href="QT01.html" class="btn btn-primary">Read More</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'img/pic02.jpg' %}" alt="" class="card-img" />
+      <div class="card-body">
+        <h4 class="card-title">
+          What is the Best Oven for Baking? Comparing Gas, Electric, &
+          Convection Ovens
+        </h4>
+        <p class="card-text">
+          Have you been watching popular baking shows and want to create
+          something of your own? Whether you dream of making a mouthwatering,
+          sugar-spun confection or simply want to bake a cake for your child’s
+          birthday, you may be wondering if your current oven is the best oven
+          for baking at home.
+        </p>
+        <a href="QT02.html" class="btn btn-primary">Read More</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/300x200" alt="" class="card-img" />
+      <div class="card-body">
+        <h4 class="card-title">How to Get Rid of Black Mold in Bathrooms</h4>
+        <p class="card-text">
+          Do you have black mold in your bathroom or shower? AHS is here to help
+          get your bathroom mold problem under control. Find out how to.....
+        </p>
+        <a href="#" class="btn btn-primary">Read More</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

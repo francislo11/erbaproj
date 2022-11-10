@@ -1,0 +1,51 @@
+.my-class:after {
+  content: "\2122";
+}
+.body {
+  background: rgb(200, 255, 255);
+}
+.get_price_button {
+  background-color: rgb(2, 158, 255);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 28px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 8px;
+  transition: background 1s, color 1s;
+}
+
+.get_price_button:hover {
+  background: white;
+  color: rgb(2, 158, 255);
+  opacity: 0.8;
+}
+.get_price_button:active {
+  opacity: 0.5;
+}
+
+.btn-secondary {
+  color: #fff !important; }
+
+img {
+  width: 100%; }
+
+.logo {
+  width: 80px; }
+
+.navbar {
+  opacity: 0.9;
+  text-transform: uppercase; }
+
+.social a {
+  margin-right: 0.4rem; }
+
+#showcase {
+  background-image: url('/static/img/homecare.jpg');
+  position: relative;
+  min-height: 300px;
+  color: #fff;
+  padding-top: 6rem; }
+
+  

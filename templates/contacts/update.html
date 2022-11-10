@@ -1,0 +1,253 @@
+<!-- created by Francis  -->
+
+{% extends 'base.html' %}
+
+<!---->
+{% block title %} Update Inquiry {% endblock %}
+
+<!-- block content -->
+{% block content %}
+<section id="update" class="bg-light py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="card">
+          <div class="card-header bg-primary text-white">
+            <h4><i class="fas-fa-recorder"></i> Update your inquiry</h4>
+          </div>
+          <div class="card-body">
+            <!-- add method within form tab -->
+            <!---->
+            <form action="updaterecord/{{mymember.id}}" method="POST">
+              {% csrf_token %}
+              <!-- check user then get id -->
+              {% if user.is_authenticated %}
+              <input type="hidden" name="user_id" value="{{user.id}}" />
+              {% else %}
+              <input type="hidden" name="user_id" value="0" />
+              {% endif %}
+
+              <div class="form-group">
+                <label for="name" class="col-form-label">Name:</label>
+                <input
+                  type="text"
+                  name="name"
+                  class="form-control"
+                  {%
+                  if
+                  user.is_authenticated
+                  %}
+                  value="{{mymember.name}}"
+                  {%
+                  endif
+                  %}
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email" class="col-form-label">Email:</label>
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  {%
+                  if
+                  user.is_authenticated
+                  %}
+                  value="{{mymember.email}}"
+                  {%
+                  endif
+                  %}
+                  required
+                />
+              </div>
+              <!---->
+              <div class="form-group">
+                <label for="phone" class="col-form-label">Phone:</label>
+                <input
+                  type="text"
+                  name="phone"
+                  class="form-control"
+                  {%
+                  if
+                  user.is_authenticated
+                  %}
+                  value="{{mymember.phone}}"
+                  {%
+                  endif
+                  %}
+                  required
+                />
+              </div>
+              <!---->
+              <div class="form-group">
+                <label for="address" class="col-form-label">Address:</label>
+                <input
+                  type="text"
+                  name="address"
+                  class="form-control"
+                  {%
+                  if
+                  user.is_authenticated
+                  %}
+                  value="{{mymember.address}}"
+                  {%
+                  endif
+                  %}
+                  required
+                />
+              </div>
+              <!---->
+              <div class="form-group">
+                <label for="message" class="col-form-label">Message:</label>
+                <input
+                  type="text"
+                  name="message"
+                  class="form-control"
+                  {%
+                  if
+                  user.is_authenticated
+                  %}
+                  value="{{mymember.message}}"
+                  {%
+                  endif
+                  %}
+                  required
+                />
+              </div>
+              <hr />
+              <input
+                type="submit"
+                value="Send"
+                class="btn btn-block btn-secondary"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %} {% comment %}
+<section id="update" class="bg-light py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="card">
+          <div class="card-header bg-primary text-white">
+            <h4><i class="fas-fa-recorder"></i> Update your inquiry</h4>
+          </div>
+          <div class="card-body">
+            <!-- add method within form tab -->
+            <!---->
+            <form action="record/{{mymember.id}}" method="POST">
+              {% csrf_token %}
+              <!-- check user then get id -->
+              {% if user.is_authenticated %}
+              <input type="hidden" name="user_id" value="{{user.id}}" />
+              {% else %}
+              <input type="hidden" name="user_id" value="0" />
+              {% endif %}
+
+              <div class="form-group">
+                <label for="name" class="col-form-label">Name:</label>
+                <input
+                  type="text"
+                  name="name"
+                  class="form-control"
+                  {%
+                  if
+                  user.is_authenticated
+                  %}
+                  value="{{user.first_name}} {{user.last_name}}"
+                  {%
+                  endif
+                  %}
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email" class="col-form-label">Email:</label>
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  {%
+                  if
+                  user.is_authenticated
+                  %}
+                  value="{{user.email}}"
+                  {%
+                  endif
+                  %}
+                  required
+                />
+              </div>
+              <!---->
+              <div class="form-group">
+                <label for="phone" class="col-form-label">Phone:</label>
+                <input
+                  type="text"
+                  name="phone"
+                  class="form-control"
+                  {%
+                  if
+                  user.is_authenticated
+                  %}
+                  value="{{mymember.phone}}"
+                  {%
+                  endif
+                  %}
+                  required
+                />
+              </div>
+              <!---->
+              <div class="form-group">
+                <label for="address" class="col-form-label">Address:</label>
+                <input
+                  type="text"
+                  name="address"
+                  class="form-control"
+                  {%
+                  if
+                  user.is_authenticated
+                  %}
+                  value="{{mymember.address}}"
+                  {%
+                  endif
+                  %}
+                  required
+                />
+              </div>
+              <!---->
+              <div class="form-group">
+                <label for="message" class="col-form-label">Message:</label>
+                <input
+                  type="text"
+                  name="message"
+                  class="form-control"
+                  {%
+                  if
+                  user.is_authenticated
+                  %}
+                  value="{{mymember.message}}"
+                  {%
+                  endif
+                  %}
+                  required
+                />
+              </div>
+              <hr />
+              <input
+                type="submit"
+                value="Send"
+                class="btn btn-block btn-secondary"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endcomment %}

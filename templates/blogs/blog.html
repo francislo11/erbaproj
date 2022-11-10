@@ -1,0 +1,295 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<section id="text">
+  <div class="container">
+    <div class="my-3">
+      <h2>HomeMatters</h2>
+      <p class="text-muted">A blog from HomeCare with resources for DIY Repairs and more.</p>
+    </div>
+  </div>
+</section>
+<br>
+
+<div class="container">
+  <div class="card mb-3" style="max-width: 1150px; min-height: 250px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
+          src="{% static 'img/kitchen-1.png' %}"
+          alt=""
+          class="img-fluid rounded-start"
+        />
+      </div>
+      <div class="col-md-8">
+        <div class="container">
+          <div class="card-body">
+            <h2 class="card-title ml-2">Is It More Eco-Friendly to Repair, Replace, or Recycle Appliances?</h2>
+            <p class="text-muted">Which is more environmentally friendly for old appliances? What are your eco-friendly appliance recycling options? HomeCare discusses each option.</p>
+            <div
+            {% if 'read the article' in request.path %}
+              class="nav-item active mr-3"
+            {% else %}
+              class="nav-item mr-3"
+            {% endif %}>
+              <a class="nav-link text-info mr-5" style="font-size:15px;" href="#">
+                <svg viewBox="0 0 24 24" fill="currentcolor" class="text-interactive inline-block pr-1" width="24" height="24">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M5 1a2 2 0 00-2 2v18a2 2 0 002 2h14a2 2 0 002-2V5l-2-2-2-2H5zm1.28 2H15v3.4a.6.6 0 00.6.6H19v12.69c0 .724-.573 1.31-1.28 1.31H6.28C5.573 21 5 20.414 5 19.69V4.31C5 3.585 5.573 3 6.28 3zM7.6 17a.6.6 0 00-.6.6v.8a.6.6 0 00.6.6h8.8a.6.6 0 00.6-.6v-.8a.6.6 0 00-.6-.6H7.6zM7 13.6a.6.6 0 01.6-.6h4.8a.6.6 0 01.6.6v.8a.6.6 0 01-.6.6H7.6a.6.6 0 01-.6-.6v-.8zM7.6 9a.6.6 0 00-.6.6v.8a.6.6 0 00.6.6h8.8a.6.6 0 00.6-.6v-.8a.6.6 0 00-.6-.6H7.6z" fill="currentcolor">
+                  </path>
+                </svg>
+                Read the article
+              </a>
+            </div>
+          </div>
+          
+        </div>   
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+         
+<!-- card columns -->
+<div class="card-columns my-4 ml-5 mr-5">
+  <div class="card">
+    <img src="{% static 'img/qt00.jpg' %}" alt="" class="card-img" />
+    <div class="card-body" style="height:250px;">
+      <h4 class="card-title">Quick Tips</h4>
+      <p class="card-text">When it feels like your life is running on empty, keeping up with work, family and all of life’s little chores managing the home can take a back seat. Learn quick-tips for the home from organizing, cleaning, maintenance, safety and more.
+      </p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="{% static 'img/dt00.jpg' %}" alt="" class="card-img" />
+    <div class="card-body" style="height:250px;">
+      <h4 class="card-title">DIY Tips</h4>
+      <p class="card-text">Learn from our home DIY repair content to help you solve appliance, HVAC, plumbing or electrical problems in your home. Choose A Replacement Handle That Fits Your Toilet
+      </p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="{% static 'img/rm00.jpg' %}" alt="" class="card-img" />
+    <div class="card-body" style="height:250px;">
+      <h4 class="card-title">Repairs & Maintenence</h4>
+      <p class="card-text">Home appliance and repair malfunctions are inevitable. Dealing with the pains of home appliance breakdowns is unnecessary with proper advice and home management remedies. Here you’ll find suggestions and instructional videos that will ensure smooth home repair and maintenance.
+      </p>
+    </div>
+  </div>
+</div>
+
+  <div class="container">
+    <div class="buttons">
+      <h2><b>Latest Blogs:</b></h2>
+      <button onclick="clearAll()">Show All</button>
+      <button onclick="filter('QT')">Quick Tips (QT)</button>
+      <button onclick="filter('DT')">DIY Tips (DT)</button>
+      <button onclick="filter('RM')">Repairs & Maintenence (RM)</button>
+    </div>
+
+  <!-- Read from datebase loop -->
+  
+  {% if blogs %}
+    
+    <div class="row" id="items">
+    {% for blog in blogs %}
+      <div class="col-sm-12 col-md-6 col-lg-4 space-top">
+        <div class="card my-4" style="width: 18rem; height:30rem;">
+          <div class="card-body">
+            <img src="{{ blog.photo_main.url }}" alt="" class="card-img mb-2" />
+            <h5 class="card-title">{{ blog.title }}</h5>
+            <p class="card-text">{{ blog.sub_title }}
+            </p>
+            <a href="{% url 'qt_01' %}" class="btn btn-primary">Go here</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  {% endif %}
+      <br>
+      <br>
+
+  <br>
+  <br>
+</div>
+ <!-- loop for pagination -->
+ <div class="container ml-5" 
+ <div class="row">
+   <div class="col-md-12">
+     <ul class="pagination">
+     {% if blogs.has_previous %}
+       <li class="page-item">
+         <a href="?page={{blogs.previous_page_number}}" class="page-link"
+           >&laquo;</a>
+       </li>
+       {% else %}
+       <li class="page-item disabled">
+         <a class="page-link" href="">&laquo;</a>
+       </li>
+     {% endif %} 
+     {% for i in blogs.paginator.page_range %} 
+         {% if blogs.paginator.page_range %} 
+           {% if blogs.number == i %}
+             <li class="page-item active"><a class="page-link">{{i}}</a></li>
+           {% else %}
+             <li class="page-item">
+               <a href="?page={{i}}" class="page-link">{{i}}</a>
+             </li>
+          {% endif %} 
+         {% endif %} 
+     {% endfor %} 
+       {% if blogs.has_next %}
+         <li class="page-item">
+           <a class="page-link" href="?page={{blogs.next_page_number}}"
+             >&raquo;</a>
+         </li>
+       {% else%}
+       <li class="page-item disabled">
+         <a class="page-link" href="">&raquo;</a>
+       </li>
+     {% endif %}
+     </ul>
+   </div>
+ </div>
+</div>
+
+<!-- Plans Modal-->
+<div class="container">
+
+  <div class="container">                  
+    <div class="modal fade" id="inquiryModal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="inquiryModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!--GoldShield -->
+            <div class="card bg-dark ml-1" style="height:32rem;box-shadow:8px 8px 10px rgb(97, 94, 94);">
+              <div class="card-body">
+                  <h2 class="card-title my-class text-white">GoldShield</h2>
+                  <div>
+                      <p class="text-white mb-4">Covers everything in SilverShield, plus 9 more appliances that you use every day.</p>
+                  </div>
+                  <div>
+                      <a href="{% url 'login' %}" class="get_price_button">Get Price</a>
+                  </div>
+                   <div class="mt-4"> 
+                      <svg class="d-inline mb-1 text-white"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                      <p class="d-inline mb-1 text-white" style="height: 25px;">Heating and Cooling Systems</p> 
+                      <br>
+                      <svg class="d-inline mb-1 text-white"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                      <p class="d-inline mb-1 text-white" style="height: 25px;">Electrical Systems</p> 
+                      <br>
+                      <svg class="d-inline mb- text-white"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg><p class="d-inline mb-1 text-white ml-1" style="height: 25px;">Plumbing Systems</p> 
+                      <br>
+                      <svg class="d-inline mb-1 text-white"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                      <p class="d-inline mb-1 text-white" style="height: 25px;">Kitchen Appliances</p> 
+                      <br>
+                      <svg class="d-inline mb-1 text-white"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg><p class="d-inline mb-1 text-white ml-1" style="height: 25px;">Laundry Appliances</p> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+
+  <div class="container">  
+    <div class="modal fade" id="inquirModal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="inquirModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+           <!-- ShieldSliver -->
+            <div class="card ml-5 bg-white" style="height:32rem;box-shadow:8px 8px 10px rgb(97, 94, 94);">
+                <div class="card-body">
+                    <h2 class="card-title my-class">SilverShield</h2>
+                    <div>
+                    <p class="text-muted mb-4">Helps protect parts of 14 major systems that keep your home running.</p>
+                    </div>
+                    <div>
+                        <a href="{% url 'login' %}" class="get_price_button">Get Price</a>
+                        
+                    </div>
+                     <div class="mt-4"> 
+                        <svg class="d-inlinemb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                        <p class="d-inline mb-1 text-muted" style="height: 25px;">Heating and Cooling Systems</p> 
+                        <br>
+                        <svg class="d-inlinemb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                        <p class="d-inline mb-1 text-muted" style="height: 25px;">Electrical Systems</p> 
+                        <br>
+                        <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg><p class="d-inline mb-1 text-muted ml-1" style="height: 25px;">Plumbing Systems</p> 
+                     </div>
+                   </div>
+                </div>
+           </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+
+  <div class="container">  
+    <div class="modal fade" id="iModal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="iModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+           <!-- PlatinumShield -->
+            <div class="card bg-white ml-1" style="height:32rem;box-shadow:8px 8px 10px rgb(97, 94, 94);">
+                <div class="card-body">
+                    <h2 class="card-title my-class">PlatinumShield</h2>
+                    <div>
+                    <p class="text-muted mb-4">Covers everything in GoldShield, plus roof leaks and more.
+                    </p>
+                </div>
+                <div>
+                    <a href="{% url 'login' %}" class="get_price_button">Get Price</a>
+                </div>
+                <div class="mt-4"> 
+                    <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                    <p class="d-inline mb-1 text-muted" style="height: 25px;">Heating and Cooling Systems</p> 
+                    <br>
+                    <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                    <p class="d-inline mb-1 text-muted" style="height: 25px;">Electrical Systems</p> 
+                    <br>
+                    <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg><p class="d-inline mb-1 text-muted ml-1" style="height: 25px;">Plumbing Systems</p> 
+                    <br>
+                    <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                    <p class="d-inline mb-1 text-muted" style="height: 25px;">Kitchen Appliances</p> 
+                    <br>
+                    <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg><p class="d-inline mb-1 text-muted ml-1" style="height: 25px;">Laundry Appliances</p> 
+                    <br>
+                    <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                    <p class="d-inline mb-1 text-muted" style="height: 25px;font-weight:bold;">Roof Leak Repairs</p> 
+                    <br>
+                    <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg><p class="d-inline mb-1 text-muted ml-1" style="height: 25px;font-weight:bold;">FREE HVAC Tune-up</p> 
+                    <br>
+                    <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                    <p class="d-inline mb-1 text-muted" style="height: 25px;font-weight:bold;">Unlimited A/C refrigerant</p> 
+                    <br>
+                    <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg><p class="d-inline mb-1 text-muted ml-1" style="height: 25px;font-weight:bold;">Coverage for code violations <span class="p-4">and permits</span></p> 
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>
+</section>
+{% endblock %}

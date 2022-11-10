@@ -1,0 +1,419 @@
+<!-- created by Francis  -->
+
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section id="text">
+    <div class="container" style="width:1200;">
+        <h1 class="display-5 text-center my-4">HOME CARE COST THAT FITS YOUR BUDGET.</h1>
+        <h1 class="display-5 text-center my-4">A HOME CARE PLAN THAT SUITS YOUR LIFE.</h1>
+        <p class="display-5 text-center my-4">Choose from different plans and flexible pricing to find the plan that works best for you. Our Home Care costs start at $299 per month.</p>
+        <br>
+          <!-- Plans table -->
+  
+        <div class="container mt-4 d-flex">
+            <div>
+                <!-- ShieldSliver -->
+                <div class="card ml-5 bg-white" style="height:32rem;box-shadow:8px 8px 10px rgb(97, 94, 94);">
+                    <div class="card-body">
+                        <h2 class="card-title my-class">SilverShield</h2>
+                        <div>
+                        <p class="text-muted mb-4">Helps protect parts of 14 major systems that keep your home running.</p>
+                        </div>
+                        <div>
+                            <a href="{% url 'login' %}" class="get_price_button">Get Price</a>
+                            
+                        </div>
+                        <div class="mt-4"> 
+                            <svg class="d-inlinemb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                            <p class="d-inline mb-1 text-muted" style="height: 25px;">Heating and Cooling Systems</p> 
+                            <br>
+                            <svg class="d-inlinemb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                            <p class="d-inline mb-1 text-muted" style="height: 25px;">Electrical Systems</p> 
+                            <br>
+                            <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg><p class="d-inline mb-1 text-muted ml-1" style="height: 25px;">Plumbing Systems</p> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div>
+            <div>
+                <!--GoldShield -->
+                <div class="card bg-dark ml-1" style="height:32rem;box-shadow:8px 8px 10px rgb(97, 94, 94);">
+                    <div class="card-body">
+                        <h2 class="card-title my-class text-white">GoldShield</h2>
+                        <div>
+                            <p class="text-white mb-4">Covers everything in SilverShield, plus 9 more appliances that you use every day.</p>
+                        </div>
+                        <div>
+                            <a href="{% url 'login' %}" class="get_price_button">Get Price</a>
+                        </div>
+                        <div class="mt-4"> 
+                            <svg class="d-inline mb-1 text-white"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                            <p class="d-inline mb-1 text-white" style="height: 25px;">Heating and Cooling Systems</p> 
+                            <br>
+                            <svg class="d-inline mb-1 text-white"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                            <p class="d-inline mb-1 text-white" style="height: 25px;">Electrical Systems</p> 
+                            <br>
+                            <svg class="d-inline mb- text-white"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg><p class="d-inline mb-1 text-white ml-1" style="height: 25px;">Plumbing Systems</p> 
+                            <br>
+                            <svg class="d-inline mb-1 text-white"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                            <p class="d-inline mb-1 text-white" style="height: 25px;">Kitchen Appliances</p> 
+                            <br>
+                            <svg class="d-inline mb-1 text-white"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg><p class="d-inline mb-1 text-white ml-1" style="height: 25px;">Laundry Appliances</p> 
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            <div>
+                <!-- PlatinumShield -->
+                <div class="card bg-white ml-1" style="height:32rem;box-shadow:8px 8px 10px rgb(97, 94, 94);">
+                    <div class="card-body">
+                        <h2 class="card-title my-class">PlatinumShield</h2>
+                        <div>
+                        <p class="text-muted mb-4">Covers everything in GoldShield, plus roof leaks and more.
+                        </p>
+                    </div>
+                    <div>
+                        <a href="{% url 'login' %}" class="get_price_button">Get Price</a>
+                    </div>
+                    <div class="mt-4"> 
+                        <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                        <p class="d-inline mb-1 text-muted" style="height: 25px;">Heating and Cooling Systems</p> 
+                        <br>
+                        <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                        <p class="d-inline mb-1 text-muted" style="height: 25px;">Electrical Systems</p> 
+                        <br>
+                        <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg><p class="d-inline mb-1 text-muted ml-1" style="height: 25px;">Plumbing Systems</p> 
+                        <br>
+                        <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                        <p class="d-inline mb-1 text-muted" style="height: 25px;">Kitchen Appliances</p> 
+                        <br>
+                        <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg><p class="d-inline mb-1 text-muted ml-1" style="height: 25px;">Laundry Appliances</p> 
+                        <br>
+                        <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                        <p class="d-inline mb-1 text-muted" style="height: 25px;font-weight:bold;">Roof Leak Repairs</p> 
+                        <br>
+                        <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg><p class="d-inline mb-1 text-muted ml-1" style="height: 25px;font-weight:bold;">FREE HVAC Tune-up</p> 
+                        <br>
+                        <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                        <p class="d-inline mb-1 text-muted" style="height: 25px;font-weight:bold;">Unlimited A/C refrigerant</p> 
+                        <br>
+                        <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg><p class="d-inline mb-1 text-muted ml-1" style="height: 25px;font-weight:bold;">Coverage for code violations <span class="p-4">and permits</span></p> 
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>      
+              <br>
+              <br>
+          <!-- Flexible Plans -->
+            <div class="container mt-4 ml-4">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="container-xl">
+                                <div class="p-1 " style="width: 500px; height: 600px;" >
+                                    <img src="{% static 'img/plan_photo.png' %}" alt="" style="width:490px;"/>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="container-xl">
+                                <div class="p-5" style="width: 500px; height: 600px;">
+                                    <div class="justify-right">
+                                        <div class="xl:w-500px">
+                                        <h2 class="px-4 text-3xl font-bold text-center text-ahs-blue xl:text-left xl:text-4xl xl:p-0">FLEXIBLE PLANS,</h2> 
+                                        <h2 class="px-4 text-3xl font-bold text-center text-ahs-blue xl:text-left xl:text-4xl xl:p-0">FLEXIBLE PRICING.</h2>
+                                    </div>
+                                    <div class="px-0 my-5 xl:p-0 xl:my-10">
+                                        <div class="flex mb-4 align-item-center xl:mb-4">
+                                        <span>
+                                            <img src="{% static 'img/index/t.png' %}" alt="" style="width:30px;"/>
+                                        </span>
+                                        <span class="text-base font-bold text-ahs-blue">
+                                            Coverage needed for your home's appliances
+                                        </span>
+                                        </div>
+                                        <div class="flex mb-4 align-items-center xl:mb-4">
+                                        <span>
+                                            <img src="{% static 'img/index/t.png' %}" alt="" style="width:30px;"/>
+                                        </span>
+                                        <span class="text-base font-bold text-ahs-blue">
+                                            The size of your home
+                                        </span>
+                                        </div>
+                                        <div class="flex mb-4 align-items-center xl:mb-4">
+                                            <span>
+                                                <img src="{% static 'img/index/t.png' %}" alt="" style="width:30px;"/>
+                                            </span>
+                                            <span class="text-base font-bold text-ahs-blue">
+                                                The Trade Service Call fee selected
+                                            </span>
+                                            </div>
+                                            <div class="flex mb-4 align-items-center xl:mb-4">
+                                            <span>
+                                                <img src="{% static 'img/index/t.png' %}" alt="" style="width:30px;"/>
+                                            </span>
+                                            <span class="text-base font-bold text-ahs-blue">
+                                                Any additional coverage added to your plan
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table> 
+           </div>
+        </div>
+          <!-- HOW IT WORKS -->
+   
+         <div class="container" style="width:fit-content"> 
+                  <div class="mx-auto">    
+                          <h4 class="mx-auto text-dark text-center" style="width:400px">HOW IT WORKS</h4>
+                  </div>
+                  <div class="mx-auto">
+                          <p class="mx-auto text-success text-center" style="width:500px">Household breakdowns are hard. When you have Hello Home Repair
+                          Home Shield, getting the help you need is easy easy.</p>
+                  </div>         
+              
+            <div class="container mx-auto">
+                <div class="card ml-5" style="width:auto;height:8rem;
+                    border-color:rgb(255, 255, 255)">
+                  <table>
+                      <tr>
+                          <td>
+                             <div class="card ml-5 mr-5" style="width:8rem;height:8rem;background-color:rgb(255,255,255);border-color:rgb(255, 255, 255)">
+                              <img src="https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_2.svg" decoding="async" data-nimg="fill" class="inline HowItWorksSection_howItWorksIcon__HgFrw" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%" sizes="100vw" srcset="https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_2.svg 640w, https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_2.svg 750w, https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_2.svg 828w, https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_2.svg 1080w, https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_2.svg 1200w, https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_2.svg 1920w, https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_2.svg 2048w, https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_2.svg 3840w">
+                              </div>
+                          </td>
+                          <td>
+                              <div class="ml-4 mr-4" style="height:8rem;"></div>
+                          </td>
+                          <td>
+                              <div class="card ml-5 mr-5" style="width:8rem;height:8rem;background-color:rgb(255,255,255);border-color:rgb(255, 255, 255)">
+                              <img src="https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_1.svg" decoding="async" data-nimg="fill" class="inline HowItWorksSection_howItWorksIcon__HgFrw" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%" sizes="100vw" srcset="https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_1.svg 640w, https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_1.svg 750w, https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_1.svg 828w, https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_1.svg 1080w, https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_1.svg 1200w, https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_1.svg 1920w, https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_1.svg 2048w, https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_1.svg 3840w">
+                              </div>
+                          </td>
+                          <td>
+                              <div class="ml-4 mr-4" style="height:8rem;"></div>
+                          </td>
+                          <td>
+                              <div class="card ml-5 mr-5" style="width:8rem;height:8rem;background-color:rgb(255,255,255);border-color:rgb(255, 255, 255)">
+                              <img src="https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_3.svg" decoding="async" data-nimg="fill" class="inline HowItWorksSection_howItWorksIcon__HgFrw" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%" sizes="100vw" srcset="https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_3.svg 640w, https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_3.svg 750w, https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_3.svg 828w, https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_3.svg 1080w, https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_3.svg 1200w, https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_3.svg 1920w, https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_3.svg 2048w, https://cdn.frontdoorhome.com/ahs/ahs-ecom/prod-1dc34b86/static/img/home/how_it_works_3.svg 3840w">
+                              </div>
+                          </td>
+                      </tr>
+                  </table>
+              </div>
+            </div>
+        </div> 
+    <div class="container" style="padding-left:220px;padding-right:160px;border-color:rgb(255, 255, 255)">
+        <div class="card ml-5" style="width:auto;height:6rem;
+            border-color:rgb(255, 255, 255)">
+          <table class="table">
+              <tr>
+                  <td>
+                    <div class="card" style="width:4rem;height:4rem;border-color:rgb(255, 255, 255)">
+                        <img src="{% static 'img/number-1-icon.png' %}" alt="">
+                    </div>
+                  </td>
+                  <td>
+                    <div class="card" style="width:4rem;height:4rem;border-color:rgb(255, 255, 255)">
+                        <img src="{% static 'img/arrow-icon.png' %}" alt="">
+                    </div>
+                  </td>
+                  <td>
+                    <div class="card" style="width:4rem;height:4rem;border-color:rgb(255, 255, 255)">
+                        <img src="{% static 'img/number-2-icon.png' %}" alt="">
+                    </div>
+                  </td>
+                  <td>
+                    <div class="card" style="width:4rem;height:4rem;border-color:rgb(255, 255, 255)">
+                        <img src="{% static 'img/arrow-icon.png' %}" alt="">
+                        </div>
+                  </td>
+                  <td>
+                    <div class="card" style="width:4rem;height:4rem;border-color:rgb(255, 255, 255)">
+                        <img src="{% static 'img/number-3-icon.png' %}" alt="">
+                    </div>
+                  </td>
+              </tr>
+          </table>
+        </div> 
+    </div>
+
+    <div class="container" style="padding-left:180px;padding-right:160px;border-color:rgb(255, 255, 255)">
+        <div class="card ml-5" style="width:auto;height:6rem;
+            border-color:rgb(255, 255, 255)">
+          <table class="table">
+              <tr>
+                  <td>
+                    <div class="card" style="width:12rem;height:8rem;border-color:rgb(255, 255, 255)">
+                        <p class="align-left">Request service online or
+                            by phone. Pay your Trade
+                            Service Call Fee.</p>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="card ml-3" style="width:12rem;height:8rem;border-color:rgb(255, 255, 255)">
+                        <p class="ml-5 align-left">We assign a repair
+                            professional.</p>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="card ml-5" style="width:13rem;height:8rem;border-color:rgb(255, 255, 255)">
+                        <p class="ml-5 align-left">We repair or replace your covered home system or appliance.</p>
+                    </div>
+                  </td>
+              </tr>
+          </table>
+        </div> 
+    </div>
+ </div> 
+    <br>
+    <br>                        
+  
+ <!-- Plans Modal-->
+<div class="container">
+
+    <div class="container">                  
+      <div class="modal fade" id="inquiryModal" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="inquiryModalLabel"></h5>
+              <button type="button" class="close" data-dismiss="modal">
+                <span>&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!--GoldShield -->
+              <div class="card bg-dark ml-1" style="height:32rem;box-shadow:8px 8px 10px rgb(97, 94, 94);">
+                <div class="card-body">
+                    <h2 class="card-title my-class text-white">GoldShield</h2>
+                    <div>
+                        <p class="text-white mb-4">Covers everything in SilverShield, plus 9 more appliances that you use every day.</p>
+                    </div>
+                    <div>
+                        <a href="{% url 'login' %}" class="get_price_button">Get Price</a>
+                    </div>
+                     <div class="mt-4"> 
+                        <svg class="d-inline mb-1 text-white"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                        <p class="d-inline mb-1 text-white" style="height: 25px;">Heating and Cooling Systems</p> 
+                        <br>
+                        <svg class="d-inline mb-1 text-white"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                        <p class="d-inline mb-1 text-white" style="height: 25px;">Electrical Systems</p> 
+                        <br>
+                        <svg class="d-inline mb- text-white"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg><p class="d-inline mb-1 text-white ml-1" style="height: 25px;">Plumbing Systems</p> 
+                        <br>
+                        <svg class="d-inline mb-1 text-white"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                        <p class="d-inline mb-1 text-white" style="height: 25px;">Kitchen Appliances</p> 
+                        <br>
+                        <svg class="d-inline mb-1 text-white"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg><p class="d-inline mb-1 text-white ml-1" style="height: 25px;">Laundry Appliances</p> 
+                      </div>
+                    </div>
+                  </div>
+                </div>
+             </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+  
+    <div class="container">  
+      <div class="modal fade" id="inquirModal" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="inquirModalLabel"></h5>
+              <button type="button" class="close" data-dismiss="modal">
+                <span>&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+             <!-- ShieldSliver -->
+              <div class="card ml-5 bg-white" style="height:32rem;box-shadow:8px 8px 10px rgb(97, 94, 94);">
+                  <div class="card-body">
+                      <h2 class="card-title my-class">SilverShield</h2>
+                      <div>
+                      <p class="text-muted mb-4">Helps protect parts of 14 major systems that keep your home running.</p>
+                      </div>
+                      <div>
+                          <a href="{% url 'login' %}" class="get_price_button">Get Price</a>
+                          
+                      </div>
+                       <div class="mt-4"> 
+                          <svg class="d-inlinemb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                          <p class="d-inline mb-1 text-muted" style="height: 25px;">Heating and Cooling Systems</p> 
+                          <br>
+                          <svg class="d-inlinemb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                          <p class="d-inline mb-1 text-muted" style="height: 25px;">Electrical Systems</p> 
+                          <br>
+                          <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg><p class="d-inline mb-1 text-muted ml-1" style="height: 25px;">Plumbing Systems</p> 
+                       </div>
+                     </div>
+                  </div>
+             </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+  
+    <div class="container">  
+      <div class="modal fade" id="iModal" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="iModalLabel"></h5>
+              <button type="button" class="close" data-dismiss="modal">
+                <span>&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+             <!-- PlatinumShield -->
+              <div class="card bg-white ml-1" style="height:32rem;box-shadow:8px 8px 10px rgb(97, 94, 94);">
+                  <div class="card-body">
+                      <h2 class="card-title my-class">PlatinumShield</h2>
+                      <div>
+                      <p class="text-muted mb-4">Covers everything in GoldShield, plus roof leaks and more.
+                      </p>
+                  </div>
+                  <div>
+                      <a href="{% url 'login' %}" class="get_price_button">Get Price</a>
+                  </div>
+                  <div class="mt-4"> 
+                      <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                      <p class="d-inline mb-1 text-muted" style="height: 25px;">Heating and Cooling Systems</p> 
+                      <br>
+                      <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                      <p class="d-inline mb-1 text-muted" style="height: 25px;">Electrical Systems</p> 
+                      <br>
+                      <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg><p class="d-inline mb-1 text-muted ml-1" style="height: 25px;">Plumbing Systems</p> 
+                      <br>
+                      <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                      <p class="d-inline mb-1 text-muted" style="height: 25px;">Kitchen Appliances</p> 
+                      <br>
+                      <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg><p class="d-inline mb-1 text-muted ml-1" style="height: 25px;">Laundry Appliances</p> 
+                      <br>
+                      <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                      <p class="d-inline mb-1 text-muted" style="height: 25px;font-weight:bold;">Roof Leak Repairs</p> 
+                      <br>
+                      <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg><p class="d-inline mb-1 text-muted ml-1" style="height: 25px;font-weight:bold;">FREE HVAC Tune-up</p> 
+                      <br>
+                      <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+                      <p class="d-inline mb-1 text-muted" style="height: 25px;font-weight:bold;">Unlimited A/C refrigerant</p> 
+                      <br>
+                      <svg class="d-inline mb-1"viewBox="0 0 24 24" fill="currentcolor" class="text-primary &quot;md:fill-current inline-block  align-top" width="24" height="24"><g clip-path="url(#prefix__clip0)"><path d="M9.08 15.681l9.7-9.902a.6.6 0 01.848-.009l.572.56a.6.6 0 01.009.848L9.52 18.09a.6.6 0 01-.852.005l-4.96-4.947a.6.6 0 01-.001-.849l.565-.566a.6.6 0 01.848-.001l3.96 3.95z" fill="currentcolor"></path></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg><p class="d-inline mb-1 text-muted ml-1" style="height: 25px;font-weight:bold;">Coverage for code violations <span class="p-4">and permits</span></p> 
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div> 
+</div>
+</section>
+{% endblock %}

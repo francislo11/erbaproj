@@ -1,0 +1,69 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<head>
+  <title>Blog QT02</title>
+</head>
+
+<h1 class="dispaly-3 text-center my-4">Quick Tips Blog</h1>
+<div class="container">
+  <!--- breadcrumb-->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="{% url 'blog' %}">Blog</a>
+    </li>
+    {% comment %}
+    <li class="breadcrumb-item">
+      <a href="QT.html">Quick_Tips</a>
+    </li>
+    {% endcomment %}
+    <li class="breadcrumb-item active">QT02</li>
+  </ol>
+
+  <!-- Headings h$ -->
+  <h1>
+    What is the Best Oven for Baking? Comparing Gas, Electric, & Convection
+    Ovens
+  </h1>
+
+  <!-- Paragraphys -->
+  <p>
+    Have you been watching popular baking shows and want to create something of
+    your own? Whether you dream of making a mouthwatering, sugar-spun confection
+    or simply want to bake a cake for your child’s birthday, you may be
+    wondering if your current oven is the best oven for baking at home.
+    <br />
+    Though the best oven for baking depends on your baking preferences and what
+    you make most often, you can certainly create baked masterpieces no matter
+    which model you have.
+    <br />
+    Here are some tips on finding the right oven for your kitchen, so you can
+    officially get out those cookie molds and soufflé ramekins and get to
+    cooking! We outline the pros and cons of gas, electric, and convection ovens
+    to help you learn which one is best for you.
+  </p>
+
+  <h3>Using a Gas Oven for Baking</h3>
+  <!-- Paragraphys -->
+  <p>Pros of a Gas Oven</p>
+  <p class="font-weight-normal">
+    - When considering an electric vs. a gas oven for baking, keep in mind that
+    the heat on a gas oven is instant. It heats up very quickly.
+  </p>
+  <p class="font-weight-normal">
+    - If your home is already equipped with a gas line, a gas oven may be more
+    cost-effective to install than an electric oven.
+  </p>
+
+  <br />
+
+  Cons of a Gas Oven
+  <p class="font-weight-normal">
+    - The internal temperature can fluctuate widely in a gas oven, so it doesn’t
+    heat as evenly as electric or convection ovens.
+  </p>
+  <p class="font-weight-normal">
+    - Most gas ovens have hot spots, affecting how evenly food is cooked. The
+    inside of a gas oven tends to be more humid than other oven types, leading
+    to issues with food browning and crisping.
+  </p>
+</div>
+{% endblock %}
